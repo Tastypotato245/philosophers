@@ -6,7 +6,7 @@
 #    By: kyusulee <kyusulee@student.42seoul.>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/09 16:53:22 by kyusulee          #+#    #+#              #
-#    Updated: 2024/02/11 18:16:19 by kyusulee         ###   ########.fr        #
+#    Updated: 2024/02/11 19:59:18 by kyusulee         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ CC		= cc
 CFLAG	= -Wall -Wextra -Werror
 
 ECHO	= echo
-ECHO_N	= echo -n
+PRINTF	= printf
 RM		= rm -f
 
 all		:
@@ -31,9 +31,8 @@ all		:
 			@$(ECHO) "$(CYAN) *** Make <$(NAME)> complete.$(DEFAULT)"
 
 $(NAME)	:	$(OBJS) $(HEAD)
-			@$(ECHO_N) "$(BLUE)["
+			@$(PRINTF) " 100%% compiling complete.$(DEFAULT)\n"
 			@$(CC) $(CFLAG) -I$(INCL_DIR) $(OBJS) -o $(NAME)
-			@$(ECHO) "]$(DEFAULT)"
 			@$(ECHO) "$(CYAN) *** Linking complete.$(DEFAULT)"
 
 clean	:
@@ -52,7 +51,7 @@ re		:
 			@$(ECHO) " *** Re-make <$(NAME)> complete."
 
 %.o		:	%.c
-			@$(ECHO_N) "#"
+			@$(PRINTF) "$(GREEN)#"
 			@$(CC) $(CFLAG) -I$(INCL_DIR) -c $^ -o $@
 
 .PHONY	:	all clean fclean re
