@@ -6,17 +6,14 @@
 #    By: kyusulee <kyusulee@student.42seoul.>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/09 16:53:22 by kyusulee          #+#    #+#              #
-#    Updated: 2024/06/24 15:29:07 by kyusulee         ###   ########.fr        #
+#    Updated: 2024/07/09 13:28:30 by kyusulee         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= philo
 
-SRCS_DIR	= ./src/
-INCL_DIR	= ./include/
-
-HEAD	= $(INCL_DIR)philo.h
-SRCS	= $(SRCS_DIR)main.c
+HEAD	= philo.h
+SRCS	= main.c
 OBJS	= $(SRCS:.c=.o)
 
 CC		= cc
@@ -32,7 +29,7 @@ all		:
 
 $(NAME)	:	$(OBJS) $(HEAD)
 			@$(PRINTF) " 100%% compiling complete.$(DEFAULT)\n"
-			@$(CC) $(CFLAG) -I$(INCL_DIR) $(OBJS) -o $(NAME)
+			@$(CC) $(CFLAG) -I./ $(OBJS) -o $(NAME)
 			@$(ECHO) "$(CYAN) *** Linking complete.$(DEFAULT)"
 
 clean	:
@@ -52,7 +49,7 @@ re		:
 
 %.o		:	%.c
 			@$(PRINTF) "$(GREEN)#"
-			@$(CC) $(CFLAG) -I$(INCL_DIR) -c $^ -o $@
+			@$(CC) $(CFLAG) -I./ -c $^ -o $@
 
 .PHONY	:	all clean fclean re
 
