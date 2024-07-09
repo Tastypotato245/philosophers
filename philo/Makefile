@@ -6,14 +6,23 @@
 #    By: kyusulee <kyusulee@student.42seoul.>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/09 16:53:22 by kyusulee          #+#    #+#              #
-#    Updated: 2024/07/09 13:28:30 by kyusulee         ###   ########.fr        #
+#    Updated: 2024/07/09 18:58:51 by kyusulee         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= philo
+NAME	=	philo
 
-HEAD	= philo.h
-SRCS	= main.c
+HEAD	=	philo.h
+SRCS	=	main.c		\
+			env.c		\
+			fork.c		\
+			param.c		\
+			parse.c		\
+			philo_cntl.c\
+			philo_fork.c\
+			philo_func.c\
+			print.c		\
+			util.c
 OBJS	= $(SRCS:.c=.o)
 
 CC		= cc
