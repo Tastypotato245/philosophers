@@ -6,7 +6,7 @@
 /*   By: kyusulee <kyusulee@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 14:14:26 by kyusulee          #+#    #+#             */
-/*   Updated: 2024/07/09 15:29:41 by kyusulee         ###   ########.fr       */
+/*   Updated: 2024/07/09 19:45:23 by kyusulee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,11 +85,11 @@ int	parse_arg(int argc, char **argv, t_env *env)
 		env->num_of_must_eat = -1;
 	else if (argc == 6)
 		env->num_of_must_eat = parse_int(argv[5]);
-	if (env->num_of_philos == NOT_INT
-		|| env->time_to_die == NOT_INT
-		|| env->time_to_eat == NOT_INT
-		|| env->time_to_sleep == NOT_INT
-		|| env->num_of_must_eat == NOT_INT)
+	if (env->num_of_philos == NOT_INT || \
+			env->time_to_die == NOT_INT || \
+			env->time_to_eat == NOT_INT || \
+			env->time_to_sleep == NOT_INT || \
+			env->num_of_must_eat == NOT_INT)
 		return (print_error(" *Error: invalid argument. (hint: NOT INT)"));
 	env->time_to_die *= 1000;
 	env->time_to_eat *= 1000;
